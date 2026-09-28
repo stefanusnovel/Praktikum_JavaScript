@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis</title>
+</head>
+<body>
+    <h3>Soal 1</h3>
+        <form id="kuis1">
+            <div>
+                <label>Nama: </label>
+                <input type="text" id="nama1" placeholder="Masukkan nama minimal 6 karakter"`>
+            </div>
+            <br>
+            <div>
+                <label>Password: </label>
+                <input type="password" id="password" placeholder="Masukkan password 6-8 karakter">
+            </div>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+            <script>
+                document.getElementById("kuis1").addEventListener("submit", function(event) {
+                    event.preventDefault();
+                    const nama1 = document.getElementById("nama1").value;
+                    const password = document.getElementById("password").value;
+                    if (!nama1 || !password) return alert("Login gagal: Nama dan Password tidak boleh kosong");
+                    if (nama1.length !== 6) return alert("Login gagal: Nama harus terdiri dari 6 karakter");
+                    if (password.length < 6 || password.length > 8) return alert("Login gagal: Password harus 6-8 karakter");
+                    if (nama1 === "MHS001" && password === "BasisA") alert("Login berhasil");
+                    else alert("Login gagal");
+                });
+            </script>
+
+    
+</body>
+</html>
